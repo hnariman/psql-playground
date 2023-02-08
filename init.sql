@@ -38,10 +38,10 @@ CREATE TABLE recipes (
 );
 
 CREATE TABLE recipe_ingredients (
-	id serial primary key,
-	recipe_id integer references recipes(id),
-	ingredient_id integer references ingredients(id),
-	amount int not null
+  id serial primary key,
+  recipe_id integer references recipes(id),
+  ingredient_id integer references ingredients(id),
+  amount int not null
 );
 
 INSERT INTO ingredients (title, description, unit) VALUES
