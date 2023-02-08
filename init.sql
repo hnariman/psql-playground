@@ -56,7 +56,7 @@ CREATE TABLE recipe_ingredients (
 INSERT INTO ingredients (title, description, unit) VALUES
 ('potato','bulba','kg'),
 ('caviar','black expensive egg','gr'),
-('oil','petroleum','ml'),
+('oil','virgin olive','ml'),
 ('beer','wish unit tons was available','liter'),
 ('sugar','sweet life','gr');
 
