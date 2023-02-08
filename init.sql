@@ -71,3 +71,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount) VALUES
 (1, 1, 1),
 (4, 1, 10),
 (2, 2, 200);
+
+-- populate data with SELECT statements
+INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount)
+SELECT 
+  recipe.id, 
+  ingredient.id, 
+  200 
+FROM
+(SELECT id FROM Recipes WHERE title LIKE 'cake') AS recipe,
+(SELECT id FROM Ingredients WHERE title LIKE 'oil') AS ingredient ;
