@@ -79,5 +79,5 @@ SELECT
   ingredient.id, 
   200 
 FROM
-(SELECT id FROM Recipes WHERE title LIKE 'cake') AS recipe,
-(SELECT id FROM Ingredients WHERE title LIKE 'oil') AS ingredient ;
+(SELECT id FROM recipes WHERE title LIKE 'cake') AS recipe,
+(SELECT id FROM ingredients WHERE title LIKE 'oil') AS ingredient ;
