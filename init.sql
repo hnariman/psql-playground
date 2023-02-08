@@ -1,9 +1,12 @@
+-- users 
 CREATE TABLE users (
   id serial primary key,
   first varchar(50) not null,
   last varchar(50) not null,
   email varchar(50) not null
 );
+
+-- populate mock data
 
 INSERT INTO users (first, last, email) VALUES 
   ('James', 'Brown', 'james.brown@mail.com'),
@@ -21,9 +24,11 @@ INSERT INTO users (first, last, email) VALUES
   ('Uriah','Wiggins','uriahwiggins@aol.com'),
   ('Kai','Sloan','kaisloan3555@google.com');
 
+-- custom types
 
 CREATE TYPE units AS ENUM ('kg', 'gr', 'liter', 'ml');
 
+-- ingredients
 CREATE TABLE ingredients (
   id serial primary key,
   title varchar(100),
@@ -31,18 +36,22 @@ CREATE TABLE ingredients (
   unit units
 );
 
+-- recipes
 CREATE TABLE recipes (
   id serial primary key,
   title varchar(50),
   description varchar(50)
 );
 
+-- middeman
 CREATE TABLE recipe_ingredients (
   id serial primary key,
   recipe_id integer references recipes(id),
   ingredient_id integer references ingredients(id),
   amount int not null
 );
+
+-- populate mock data
 
 INSERT INTO ingredients (title, description, unit) VALUES
 ('potato','bulba','kg'),
